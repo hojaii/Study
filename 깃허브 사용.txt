@@ -1,0 +1,40 @@
+https://rogerdudler.github.io/git-guide/index.ko.html
+https://code.visualstudio.com/docs/?dv=win
+https://gitforwindows.org/
+
+
+저장소 생성
+: git init
+
+저장소 상태
+: git status
+
+git 사용자 등록
+: git config user.name (이름)
+git config user.email (이메일)
+
+ㅡㅡㅡㅡㅡ(보통 여기까지만 설정하면 연동이됩니다 그이상은 강사님께 여쭤봐야할듯?)
+
+변경 목록 staging
+: git add .
+
+변경 확정 (로그남기기)
+: git commit -m "(메세지)"
+
+-------------------------------
+
+서버 저장소 생성후  원격 저장소 주소를 로컬 저장소에 등록
+: git remote add origin (원격저장소주소)
+
+첫번째 푸시
+: git push -u origin master
+
+두번째 이후 푸시
+: git push 
+-> 원격치에 현재 브런치를 푸시한다
+
+서버 저장소를 복제 할때
+: git clone (원격저장소주소)
+
+.gitignore 생성
+: gitignore.io
