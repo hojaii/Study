@@ -1,5 +1,3 @@
-https://github.com/namsk/lbt-web/blob/master/slides/02-javascript-quick-guide.pdf
-
 JavaScript는 객체 기반언어임
 
 let : mutable
