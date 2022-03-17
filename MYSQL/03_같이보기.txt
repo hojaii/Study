@@ -1,0 +1,69 @@
+Between a And b : a~b 사이를 출력받을때 사용
+
+in(a, b, c) : a or b or c 를 출력받을때 사용
+
+패턴매칭 (와일드 카드)
+% : 0개이상의 글자를 의미함
+
+_ : 1개의 글자를 의미함
+
+패턴매칭은 SQL서버에 부하를 많이주게됨
+
+Any연산자와 All연산자
+
+SubQuery에 두대상이 있다고 한다면,
+
+Height >= Any(SubQuery); >> 적은 대상보다 큰것
+ex) 경남 출신 사람이 171, 173cm가 있다면 171cm 이상인 사람들
+
+Height >= All(SubQuery); >> 큰 대상 보다 큰것
+ex) 경남 출신 사람이 171, 173cm가 있다면 173cm 이상인 사람들
+
+정렬
+
+ASC는 오름차순으로 정렬하고 default값임
+
+DESC는 내림차순으로 정렬함
+
+ex)Order by ~ ASC;
+
+만약 앞조건이 동률일경우 이중정렬으로 사용시 동률끼리 뒷조건을 다시 정렬시킴
+
+ex)Order by ~ ASC, ~ DESC;
+
+테이블은 복사해서 가져와도 PK설정같은 각종 Key설정은 가져오지않고 그 데이터만을 가져옴
+
+Limit a,b ; : a번째에서 시작해서 b의 갯수만큼 출력시킴
+
+Limit a; : 첫번째에서 a갯수만큼 출력시킴
+
+집계함수의 종류
+
+Sum(), Avg(), Max(), Min(), Count(), Stdev()
+
+집계 함수 괄호내에 연산이 가능함
+ex) Sum(a*b) : ab값의 합을 출력함
+
+그룹핑
+
+Group by 
+
+일반적으론 집계함수와 함께 사용함
+
+Where명령어 안에서는 집계함수와 SubQuery설정도 가능함
+
+일반적인 SQL절의 순서
+
+Select <컬럼이름>or<집계함수>
+From <테이블이름>
+Where <조건>
+Group by <컬럼이름>
+Having <그룹별 조건>
+Order by <컬럼 이름>;
+
+Dinstinct는 중복되는 row를 제거해줌
+ex) A가 서울 B가 서울 C가 경기 D가 경기라면
+
+Distinct 미사용시 서울 서울 경기 경기 출력
+
+Distinct 사용시 서울 경기 출력

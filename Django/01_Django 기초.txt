@@ -1,0 +1,85 @@
+My first Web : 프로젝트와 관련된 파일과 폴더를 모아놓은 최상위 폴더
+
+		Mysite : project명으로 만들어진 폴더 프로젝트 관련 파일들이 포함
+			Settings.py : 프로젝트 설정 파일
+			urls.py : 최상위 UrlConfs 파일			
+
+		polls : application 이름으로 만들어진 application폴더 해당 application에대한 파일이 포함
+			admin.py : admin site에 등록
+			apps.py : 해당 application의 설정파일
+			models.py
+			views.py
+
+		manage.py : django의 명령어를 처리해주는 파일 (자동으로제공)
+
+		db.sqlite3 : SQLite3 데이터 베이스파일 (테이블이 포함)
+
+
+1. Project에 대한 설정
+> setting.py를 수정
+
+2. Django는 기본적으로 Database를 무조건 사용하게 되어있음
+> 기본으로 제공된 SQLite3을 사용
+> 현재 존재하지않기 때문에 기본 table을 생성
+> python manage.py migrate
+
+3. 서버 기동
+web server를 기동시켜서 project를 deploy
+>python manage.py runserver
+
+
+web application (project)
+1. web server를 준비
+2. 우리의 project를 만들어야함 
+3. web server에게 우리 project로 의지 (configure)
+4. web server를 시작(기동) > 기동하면서 우리 project를 web에서 사용가능한 형태로 service
+5. web client가 우리 project를 web server를 통해서 사용할수있음
+
+
+Django는 기본적으로 admin page를 우리에게 지급됨
+> https://localhost:8000/admin
+> 관리자 계정을 만들어서 admin page를 사용함 (python manage.py createsuperuser)
+
+이 admin page로 생성된 database table들을 살펴볼수가 있음
+
+
+객체지향 프로그램의 기본 디자인 패턴
+
+MVC pattern
+
+Model : data 처리(DB처리포함)
+View : 클라이언트에 보여지는 부분
+Controller : 로직처리
+
+Django는 MVC의 변형인 MVT패턴을 이용함
+
+
+Database table생성
+
+1. project생성하기 
+> django-admin startproject mysite
+
+2. 해당 project내에 하나의 기능을 수행하는 application을 생성
+> polls라는 이름을 가지는 투표기능
+  python manage.py startapp polls
+
+3. pycharm을 이용해서 project를 열기
+
+4. project 설정 
+> mysite/ setting.py
+
+5. Django는 기본 table을 가지고 서버를 기동해야함
+> python manage.py migrate
+
+6. 서버기동
+> python manage.py runserver
+
+7. admin page를 사용하려면 ID와 PW생성
+> python manage.py createsuperuser
+
+8. polls라는 application을 작성
+> 제일먼저 database table을 만들기 위해 model.py에서 class를 작성
+> 이 class는 admin page에서 확인하기위해 admin.py파일에서 작성한 class를 등록 
+> class를 이용해서 MySQL에 Table을 만들기
+> Python manage.py makemigrations
+> python manage.py  migrate

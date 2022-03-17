@@ -1,0 +1,54 @@
+자바 언어의 특성
+
+1. 플랫폼 ( Hardware + OS ) 에 독립적임 
+
+플랫폼에 종속성을 가지는 코드를 플랫폼이 변경되더라도 수정없이 실행이 가능함
+
+2. 컴파일 언어 + 인터프리터 언어
+
+소스코드(.java) -> javac -> 바이트코드(.class) -> java클래스명
+
+3. 객체지향언어
+
+4. JAVA는 class 단위로 소스코드 작성과 구현이 가능함
+
+5. 대소문자를 구분함
+
+식별자 이름의 규칙
+
+1. 식별자는 영문자, _, $로 시작하는데 일반적으론 영문자로 시작을함
+
+2. 두번째 문자부터는 숫자 사용이 가능함
+
+3. 길이에 제한이 없음
+
+4. 키워드는 사용불가
+
+5. 기본 클래스명으로는 사용이 불가능함 (java.lang 패키지에 포함된 클래스명들 ex) String, System)
+
+데이터의 유형
+
+Primitive Data Type (기본형) : 할당 연산자와 함께 사용함
+
+binary형식의 boolean, byte, char, short, int, long
+
+부동소수점 형식의 float, double
+
+Casting과 Promotion
+
+ㅡㅡㅡㅡPromotionㅡㅡㅡㅡㅡ>
+byte short int long float double
+ 
+       char
+<ㅡㅡㅡㅡㅡCastingㅡㅡㅡㅡㅡ
+
+ex)	byte a=3;
+	int b = a;
+	byte c =(byte) b;
+
+	double d= 0.5;
+	float f= (float)d;
+
+boolean타입은 프로모션과 캐스팅 둘다 불가능함
+
+byte나 short와는 서로 캐스팅관계, char에서 int는 프로모션이 진행됨

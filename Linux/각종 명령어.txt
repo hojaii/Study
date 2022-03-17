@@ -1,0 +1,130 @@
+[디렉토리 내용 확인]
+ls
+-a : 숨겨진 내용까지 포함
+-l : 상세 내역까지 포함
+
+[VirtualBox 프로그램 명령어]
+1) Ctrl + Alt + f - 전체화면
+
+2) Shift + Space - 한영키
+	
+[네트워크 관련 명령어]
+ip addr 
+: 가상머신에 설정되어있는 IP 확인하는기능
+가상으로 제공해주는 네트워크카드에 inet 10.0.2.15/24 
+* inet 주소가 자동으로 할당이 되어있는걸 확인할 수 있음
+
+exit 
+: 다른 컴퓨터 네트워크에 접속한 상태로부터 로그아웃 할때
+
+cd 
+: 접속해있는 폴더로부터 나가는 명령어
+
+[시스템 관련 명령어]
+sudo -i 
+: 우분투에서 root(관리자 계정)로 접속
+
+pwd
+: 현재 사용중인 작업자를 알려줌
+
+clear 또는 ctrl + L 
+: 터미널 내용을 삭제시켜줌
+
+history / history !10 
+: 사용했던 명령어 목록송출
+
+status / show / --help / -a 
+: 설정 확인하는 명령어
+
+1) 시스템 종료
+systemctl poweroff / halt
+halt
+shutdown -h now
+init 0
+
+2) 시스템 재부팅
+systemctl reboot
+reboot
+shutdown -r
+init 6
+	
+[시간 관련 명령어] 
+timedatectl 
+:시간에 관련된 모든 설정을 확인
+
+timedatectl list-timezones 
+	
+| grep 원하는 단어부터 시작되는 파일 보여줌 
+timedatectl list-timezones | grep asia
+- timezones 에서 아시아만 선택에서 보여줌
+
+[디렉토리 관련 명령어]
+cd .. 
+: 상위 디렉토리로 이동
+
+cd - 
+: 이전 디렉토리로 이동
+
+cd ~/Documents/ 
+: 특정 디렉토리로 이동
+	
+[디렉토리 생성과 삭제]
+mkdir 
+: 디렉토리 생성하기
+
+mkdir test_01 test_02 
+: 디렉토리 여러개 생성하기
+
+mkdir -p tmp/data/guest 
+: 특정 하부디렉토리 까지 생성
+	
+rm -r tmp 
+: 하위 디렉토리까지 모두 삭제
+
+rm -rf tmp 
+: 하위 디렉토리까지 강제 삭제
+
+[파일 관리 명령어]
+touch 
+: 유효한 파일 생성 , 내용을 채울 수도 있음
+
+cat 
+: 파일의 내용 전체를 보고싶을때 
+
+head filename 
+: 파일의 내용 위에서 부터 default 10줄
+
+tail filename 
+: 파일의 내용 밑에서부터 default 10줄
+
+less 
+: 페이지 단위로 파일의 내용을 보여주는 명령어
+cat과는 다르게 파일 내에서 내용찾기 가능
+( N 아래에서부터 위로 탐색 / n 위에서부터 아래로 탐색 )
+	
+cp : 파일을 복사하는 명령어
+	-r : 디렉토리 자체를 복사할때
+	-f : 복사 대상 파일이 이미 있으면 강제로 지우고 복사
+	-i : 만약 대상 파일이 이미 있으면 물어보고 복사
+
+[파일 검색 명령어]
+find 
+: 특정 파일 검색가능
+ 1) find /etc -type f -name 'h*' -print
+ 2) find . -type f -name '*' -empty -exec ls -l {} /;
+
+grep
+: 어떤 파일에서 특정한 문자를 찾을때
+
+whereis
+:  명령어의 파일 경로 찾아줌
+
+man
+: 명령어의 모든 사용 설명서 출력
+( 1번 일반명령어 8번 관리자명령어 5번 설정파일 )
+
+echo 
+: print와 같은 기능을 하는명령어
+
+tree (표시하고자 하는 최상위 디렉토리)/
+: 해당 디렉토리로 하위 디렉토리를 모두 표시

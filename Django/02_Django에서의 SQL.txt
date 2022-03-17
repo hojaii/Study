@@ -1,0 +1,51 @@
+My Sql의 Table		Django의 Class
+
+polls_question <ㅡㅡㅡㅡ> model.py안에 Question class 고 
+3 record(행) <ㅡㅡㅡㅡ>   3개의 instance
+ORM (Object Relation Mapping)개념
+
+URL		View		Templete
+
+/polls		index()		index.html
+
+/polls2		detail()		deteail.html
+
+/polls/2/vote	vote()
+
+/polls/2/results	result()		result.html
+
+
+요청을 보내는 방식
+
+보통 이 둘중 하나 사용
+GET
+POST
+
+일반적으로 REST에서만 사용
+PUT 	
+DELETE
+
+"GET"방식은 우리가 request를 보내는 거의 대부분의 방식
+>> browser에서 직접 url을 입력
+>> hyperlink를 클릭해서 request를 보내는 방식
+>> (form)에서 method를 get으로 설정해서 request를 보내는 방식
+
+"POST"방식은 (form)에서 method의 값을 =cost로 지정했을경우
+
+GET방식은 특정 url에 데이터를 실어서 보낼때 url뒤에 데이터를 붙혀서 보냄
+ex) http://www.naver.com:go/polls?mydata=100&mystr=홍길동
+portal,IP(domain number),port,path,(변수,    =값 & 변수 = 값)
+() = Query String
+
+장점 : 편리함
+단점 : 보안성이 떨어짐(전달하는것(변수=값)이 url에서도 다 보임), 길이 제한이 있음
+
+POST방식은 데이터를 전달할때 외부로 노출되지않음,
+길이제한이 없기때문에 이미지, 파일 업로드 기능을 POST방식으로 이용
+(url에 데이터가 보이지않음 : 보안성이 아주 조금 있음)
+
+redirect : 클라이언트에게 결과를 보내주는데 html을 보여주는게아니라 특정 URL으로 다시 request를 보내라고함
+
+
+
+

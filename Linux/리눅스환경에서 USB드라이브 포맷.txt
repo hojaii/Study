@@ -1,0 +1,32 @@
+파티션들은
+lsblk로 쉽게 확인 가능
+
+[마운트, 언마운트]
+mount 명령
+: 주변장치와 파일 시스템을 마운트
+mount /dev/sdb1 /home
+
+unmount 명령
+: 주변 장치와 연결된 파일 시스템의 연결을 해제(언마운트)
+umount /dev/sdb1
+
+[파티션만들기]
+관리명령어 
+: fdist /dev/sdb
+도움말이 필요하면 M키를 입력함
+
+새파티션은 N키를 입력후
+
+W키를 입력해서 변경사항을 반영함
+
+D키는 삭제
+
+lsblk 명령어로 sdb1의 파티션이 나뉘었는지 확인함
+
+[포맷하기]
+
+mkfs.xfs -f /deb/sdb1
+혹은, mkfs.ext4 /dev/sdb1
+
+(NTFS 파일 시스템으로 포맷하기)
+mkntfs -f /dev/sdb1

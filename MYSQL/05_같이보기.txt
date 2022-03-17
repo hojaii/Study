@@ -1,0 +1,67 @@
+Join
+
+일반적인 Join은 Inner Join을 지칭함
+
+Select <컬럼의목록>
+From <첫번째 테이블 이름>
+	Inner Join <두번째 테이블 이름>
+	On <Join문 조건>
+Where <첫번째 테이블조건>
+~~~~
+
+Inner Join 사용예시
+ㅡ 'EJW'가 청바지를 구매했을때 이 사람의 주소 찾기
+
+Select userTbl.addr
+From buyTbl
+	Inner Join userTbl
+	On buyTbl.userId = userTbl.userId
+Where buyTbl.userId = 'EJW' And
+          buyTbl.prodname = '청바지'
+
+
+Join문의 Table에도 Alias 설정이 가능함
+
+Outer Join
+
+Join조건에 만족하지 않는 행까지 포함시켜 출력함
+
+Select <컬럼목록>
+From <첫번째 테이블> (Left Table)
+	<Left | Right | Full>Outer Join <두번째 테이블> (Right Table)
+	On <Join조건>
+Where <검색조건>
+~~~~
+
+Index
+
+검색을 빠르게 시켜주지만 해당 쿼리가 읽기보다는 데이터 추가 제거가 잦은 쿼리라면 오히려 느려지게함
+
+Clustered Index
+
+테이블당 한개만 존재하고 PK로 설정된 컬럼에 이 인덱스가 자동으로 설정됨
+
+Secondary Index
+
+Unique라는 제약조건이나 Create Index로 생성함 
+>> 책 뒤쪽의 찾아보기 페이지 같은 기능을 제공함
+
+
+프로그램 작성
+
+구조적 프로그래밍
+
+설계와 구현이 쉬움 즉 프로그램을 빠르게 만들수 있으며 작성할때의 비용이 적게들지만
+
+유지보수가 힘든편임
+
+절차적 프로그래밍
+
+유지보수가 쉽지만 분석 이나 설계가 비교적 어렵고  프로그램을 만드는데 시간이 오래걸리는 편임
+
+Class란?
+
+객체를 모델링하는 수단으로 추상데이터형(ADT)으로 데이터가 취할수 이는 값의 형에 더해서
+
+데이터를 조작할수 있게 하는것
+

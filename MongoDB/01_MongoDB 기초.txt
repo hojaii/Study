@@ -1,0 +1,41 @@
+https://www.mongodb.com/try/download/community
+
+
+환경변수 설정 C:\Program Files\MongoDB\Server\5.0\bin
+
+cmd창으로 shell실행
+
+cmd창 > mongo
+
+<shell상태>
+>use admin (admin database를 사용)
+
+
+>db.shutdownServer(); (데이터베이스 종료)
+
+>show dbs; (mongodb 안의 데이터베이스 확인,조회)
+
+>use db명 (특정db를 사용)
+db명이 없는 db명을 사용한다고 하면 새로운 db를 생성함
+(안에 데이터가없으면 showdbs;로 출력이 안됨)
+
+>db; (현재 사용중인 db가 무엇인지 알고싶을때)
+
+>db.book.insert({"title": "jutice", "author": "Micheal Sandel"})
+(데이터 삽입)
+
+>show dbs; (데이터가 삽입되었으니 생성했던 새로운 db가 이제 보이게됨)
+
+https://www.jetbrains.com/ko-kr/datagrip/download/download-thanks.html
+
+db.dropDatabase() (db삭제)
+
+
+MongoDB의 collection 생성과 조회
+
+collection은 RDBMS에서의 Table과 같은개념
+db.createCollection("books");
+
+collection의 삭제
+
+drop.people.drop()

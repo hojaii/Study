@@ -1,0 +1,30 @@
+조건처리, 반복처리
+
+만약 ~ 라면 ~로 행동하고, ~가 아니라면 ~을 행동
+
+다중 조건문 
+
+if (조건식){
+	// 조건식 1이 true일때
+	else if (조건식 2){
+		//조건식 1이 false이며 조건식2가 true일때
+	}
+
+다중 if문 or nestied if문 
+>> switch문
+
+Switch (변수or연산식){
+		정수(표현식)or문자열
+		case값 : 문장수행;
+			break
+		} 
+
+Switch case default break문
+
+case에 선언되는 값은 중복선언 불가능
+case는 필요한만큼 선언이 가능
+switch의 인수(매개변수, 파라미터)는 변수 or 연산식 or 값을 반환하는 매서드는 정수타입과 String을 사용
+
+
+For 반복문
+반복횟수를 알고있을때 사용함
